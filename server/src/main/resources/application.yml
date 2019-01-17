@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Spring OAuth2 template
+
+management:
+  context-path: '/sys'
+
+endpoints:
+  enabled: false
+  metrics:
+    enabled: true
+  health:
+    enabled: true
+
+security:
+  oauth2:
+    signingKey: 61d11e20-af83-4dec-87da-58ab2485b348
+    client:
+      client-id: webui
+      registered-redirect-uri: http://localhost:3000/token, /ui/token
+      authorized-grant-types: implicit
+      scope: write
+      auto-approve-scopes: write
+      resource-ids: spring-vue-oauth2
+    resource:
+      id: spring-vue-oauth2
+  user:
+    name: admin
+    password: admin
+    role: ADMIN
