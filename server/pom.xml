@@ -17,7 +17,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring-boot.version>1.5.12.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -35,7 +35,7 @@
     <dependencies>
         <dependency>
             <groupId>org.webjars</groupId>
-            <artifactId>ui</artifactId>
+            <artifactId>spring_vue_ui</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
@@ -52,11 +52,19 @@
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
+            <version>2.3.4.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-jwt</artifactId>
+            <version>1.0.9.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
 
         <dependency>
@@ -82,7 +90,7 @@
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
+            <artifactId>groovy</artifactId>
             <scope>runtime</scope>
         </dependency>
 

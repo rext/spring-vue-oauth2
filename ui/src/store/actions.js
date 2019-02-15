@@ -1,4 +1,4 @@
-import { Param, Dictionary, Server, Job } from '../api';
+import { Server } from '../api';
 import auth from './auth';
 import jwtDecode from 'jwt-decode';
 import router from '../router'
@@ -34,16 +34,3 @@ export default {
   }
 }
 
-function command(commit, type, cmd, name) {
-  return new Promise((resolve, reject) => {
-    cmd().then(resp => {
-      commit(type, resp);
-      resolve();
-    })
-      .catch(e => fail(e, name, reject))
-  })
-}
-
-function fail(e, msg, reject) {
-  reject({ error: e, msg: msg });
-}

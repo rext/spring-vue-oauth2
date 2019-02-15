@@ -1,6 +1,7 @@
 package me.rext.example.spring_vue_oauth2.web.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -18,7 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
-    private Environment env;
+    private SecurityProperties securityProperties;
 
     @Bean
     @Override
@@ -33,11 +34,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        SecurityProperties.User user = securityProperties.getUser();
         auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
-                .withUser(env.getRequiredProperty("security.user.name"))
-                .password(passwordEncoder.encode(env.getRequiredProperty("security.user.password")))
-                .authorities(env.getRequiredProperty("security.user.role"));
+                .withUser(user.getName())
+                .password(passwordEncoder.encode(user.getPassword()))
+                .authorities(user.getRoles().toArray(new String[]{}));
     }
 
     @Override

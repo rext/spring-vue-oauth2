@@ -5,7 +5,7 @@
 
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
-    <artifactId>ui</artifactId>
+    <artifactId>spring_vue_ui</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>UI</name>
     <description>Vue SPA</description>
@@ -55,6 +55,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
                 <executions>
                     <execution>
                         <id>default-test</id>

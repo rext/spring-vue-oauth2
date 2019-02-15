@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class UiFilter extends OncePerRequestFilter {
 
-    private static final String WEBJARS_UI = "/webjars/app-ui";
+    private static final String WEBJARS_UI = "/webjars/spring_vue_ui";
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

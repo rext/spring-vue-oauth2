@@ -1,5 +1,7 @@
 ## Project setup
 ```
+npm install -g @vue/cli
+npm install @vue/cli-service
 npm install
 ```
 
@@ -30,5 +32,5 @@ mvn package
 
 ### Build dist and webjar
 ```
-mvn package -PgenerateUI
+mvn install -PgenerateUI
 ```

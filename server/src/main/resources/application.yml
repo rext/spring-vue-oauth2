@@ -1,16 +1,18 @@
 spring:
   application:
     name: Spring OAuth2 template
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
 
 management:
-  context-path: '/sys'
-
-endpoints:
-  enabled: false
-  metrics:
-    enabled: true
-  health:
-    enabled: true
+  endpoints:
+    web:
+      base-path: /sys
+      exposure:
+        include: 'health'
 
 security:
   oauth2:
@@ -24,7 +26,4 @@ security:
       resource-ids: spring-vue-oauth2
     resource:
       id: spring-vue-oauth2
-  user:
-    name: admin
-    password: admin
-    role: ADMIN
+

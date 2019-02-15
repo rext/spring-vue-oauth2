@@ -23,8 +23,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        //TODO revert API matcher
-        http.antMatcher("/api1/**")
+        http.antMatcher("/api/**")
                 .authorizeRequests()
                 .anyRequest().fullyAuthenticated()
                 .and()
